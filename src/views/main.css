@@ -1,0 +1,14 @@
+* {
+    border:0;
+    padding:0;
+    margin:0;
+}
+html,body {
+    background:#1a1a1a;
+    color:#e0ed5e;
+}
+
+a {
+    text-decoration: none;
+    color:#e0ed5e
+}

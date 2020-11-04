@@ -1,0 +1,28 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+              "targets": {
+                "ie": 10
+              }
+            }
+          ],
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        "@babel/plugin-transform-runtime",
+        "react-hot-loader/babel",
+        "add-module-exports",
+        "@babel/plugin-proposal-object-rest-spread",
+        "transform-class-properties",
+        ["@babel/plugin-proposal-decorators", { "legacy": true }],
+        [
+            "import",
+            {
+                "libraryName": "antd",
+                "style": true
+            }
+        ]
+    ]
+}
