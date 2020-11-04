@@ -19,7 +19,7 @@ const Logger = require('koa-logger');
 
 // 配置文件
 const config = {
-    port: 3040,
+    port: 5050,
     title:'数据'
 };
 
