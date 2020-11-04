@@ -39,6 +39,12 @@ app.use(Logger());
 // 设置路由
 app.use(
     new Router()
+        .get('/' , async (ctx, next) => {
+            const {store} = await searchTemplate(ctx,B,'/b',ctx.params)
+
+            await renderFullHtml(ctx,store,ctx.req.url,'哔哩哔哩收藏排行榜')
+            await next()
+        })
         .get('/b' , async (ctx, next) => {
             const {store} = await searchTemplate(ctx,B,'/b',ctx.params)
 
