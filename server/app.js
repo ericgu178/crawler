@@ -51,6 +51,11 @@ app.use(
             await renderFullHtml(ctx,store,ctx.req.url,'哔哩哔哩收藏排行榜')
             await next()
         })
+        .get('/instagram' , async (ctx, next) => {
+            const { store } = getCreateStore(ctx,B)
+            await renderFullHtml(ctx,store,ctx.req.url,'instagram')
+            await next()
+        })
     .routes()
 );
 
