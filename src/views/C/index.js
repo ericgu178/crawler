@@ -25,14 +25,14 @@ class WechatGroup extends React.Component {
         const { data,loading } = this.state;
         const html = data.map((item,index)=>(
                 <div key={index} style={{width:'calc(100% / 4 - 20px)',margin:'10px'}}>
-                    <img src={item.src} alt={item.alt} width={'100%'} title={item.alt}></img>
+                    <img src={item.src} alt={item.alt} width={'100%'} title={item.alt} referrerPolicy="no-referrer"></img>
                 </div>
         ))
         return (
             <div className="bili">
                 <div className="bilititle">微信群采集</div>
                 <Alert severity="info" style={{marginTop:'20px'}}>
-                    <ul>
+                    <ul style={{marginLeft:'20px'}}>
                         <li>1. 本站的微信群二维码是采集而来的；</li>
                         <li>2. 每天可能会有 10 个以上新群采集进来；</li>
                         <li>3. 因为群很快就可能会加满100人，所以大家可以隔几个小时来看一下；</li>
