@@ -4,6 +4,7 @@ import RenderRoutes from './router';
 
 import BIndex from '../views/B/index'; //B站
 import Instagram from '../views/Instagram/index'; //instagram
+import WechatGroup from '../views/C/index'; //instagram
 
 class index extends React.Component {
     render() {
@@ -13,6 +14,7 @@ class index extends React.Component {
                 <Switch>
                     <RenderRoutes path="/b" component={BIndex}/>
                     <RenderRoutes path="/instagram" component={Instagram}/>
+                    <RenderRoutes path="/wechat" component={WechatGroup}/>
                     <Redirect from="/" to="/b" />
                 </Switch>
             </div>
@@ -24,5 +26,6 @@ export default withRouter(index)
 
 export const routes = [
     { path:'/b', component:BIndex },
-    { path:'/instagram', component:Instagram }
+    { path:'/instagram', component:Instagram },
+    { path:'/wechat', component:WechatGroup }
 ]

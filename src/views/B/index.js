@@ -1,6 +1,5 @@
 import React from 'react';
 import './index.css';
-import { getFav } from '../../api/b';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import StarsIcon from '@material-ui/icons/Stars';
 import CommentIcon from '@material-ui/icons/Comment';

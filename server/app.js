@@ -12,7 +12,7 @@ import { matchRoutes } from 'react-router-config';
 import { renderToString } from 'react-dom/server';
 import { routes } from "../src/router/index"
 import getCreateStore from './store';
-import { B }  from '../src/store/reducers';
+import { B,C }  from '../src/store/reducers';
 import index from "../src/views/main"
 
 const Logger = require('koa-logger');
@@ -54,6 +54,12 @@ app.use(
         .get('/instagram' , async (ctx, next) => {
             const { store } = getCreateStore(ctx,B)
             await renderFullHtml(ctx,store,ctx.req.url,'instagram')
+            await next()
+        })
+        .get('/wechat' , async (ctx, next) => {
+            const {store} = await searchTemplate(ctx,C,'/wechat',ctx.params)
+
+            await renderFullHtml(ctx,store,ctx.req.url,'微信群')
             await next()
         })
     .routes()

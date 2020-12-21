@@ -6,7 +6,7 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import ImageAspectRatioIcon from '@material-ui/icons/ImageAspectRatio';
 import InstagramIcon from '@material-ui/icons/Instagram';
-
+import GroupIcon from '@material-ui/icons/Group';
 class Main extends React.Component {
     state = {
         value:'b'
@@ -30,6 +30,7 @@ class Main extends React.Component {
                 >
                     <BottomNavigationAction style={{background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',fontSize:'18px',fontWeight:'700',color:'#000'}} label="instagram" value="instagram" icon={<InstagramIcon />} />
                     <BottomNavigationAction style={{background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',fontSize:'18px',fontWeight:'700',color:'#000'}} label="哔哩哔哩" value="b" icon={<ImageAspectRatioIcon />} />
+                    <BottomNavigationAction style={{background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',fontSize:'18px',fontWeight:'700',color:'#000'}} label="微信群" value="wechat" icon={<GroupIcon />} />
                 </BottomNavigation>
             </div>
         )
