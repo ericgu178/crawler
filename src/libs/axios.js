@@ -2,7 +2,7 @@ import axios from 'axios';
 
 let base = 'https://api.ericgu178.com'; // 基础url
 
-axios.defaults.timeout = 15000;
+axios.defaults.timeout = 60000;
 
 
 export const getRequest = (url, params) => {

@@ -73,8 +73,13 @@ class Instagram extends React.Component {
                     </div>
                     
                 </div>
-                <div style={{height:'100%',width:'80%',display:'flex',justifyContent:'center',alignItems:'center'}}>
-                    { this.state.loading === true ? <CircularProgress /> : this.state.img.length === 0 ? <></>  : <img src={this.state.img} style={{width:'70%',maxHeight:'100%'}} alt="123"></img>}
+                <div style={{height:'calc(100% - 40px)',overflowY: 'scroll',width:'calc(80% - 40px)',margin:'20px',display:'flex',justifyContent:'center',alignItems:'center',flexWrap:'wrap',}}>
+                    { this.state.loading === true ? <CircularProgress /> : 
+                    this.state.img.length === 0 ? <></>  : 
+                        this.state.img.map(v=>{
+                            return <img style={{width:'calc(100%/2 - 10px )',maxHeight:'100vw',marginLeft:'10px',marginTop:'10px'}} src={v} alt={v}></img>
+                        })
+                    }
                 </div>
             </div>
         )
