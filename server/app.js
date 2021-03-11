@@ -56,6 +56,11 @@ app.use(
             await renderFullHtml(ctx,store,ctx.req.url,'instagram')
             await next()
         })
+        .get('/shorturl' , async (ctx, next) => {
+            const { store } = getCreateStore(ctx,B)
+            await renderFullHtml(ctx,store,ctx.req.url,'短链接生成')
+            await next()
+        })
         .get('/wechat' , async (ctx, next) => {
             const {store} = await searchTemplate(ctx,C,'/wechat',ctx.params)
 

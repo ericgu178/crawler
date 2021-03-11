@@ -5,6 +5,7 @@ import RenderRoutes from './router';
 import BIndex from '../views/B/index'; //B站
 import Instagram from '../views/Instagram/index'; //instagram
 import WechatGroup from '../views/C/index'; //instagram
+import ShortUrl from '../views/S/index'; // 短链接
 
 class index extends React.Component {
     render() {
@@ -15,6 +16,7 @@ class index extends React.Component {
                     <RenderRoutes path="/b" component={BIndex}/>
                     <RenderRoutes path="/instagram" component={Instagram}/>
                     <RenderRoutes path="/wechat" component={WechatGroup}/>
+                    <RenderRoutes path="/shorturl" component={ShortUrl}/>
                     <Redirect from="/" to="/b" />
                 </Switch>
             </div>
@@ -27,5 +29,6 @@ export default withRouter(index)
 export const routes = [
     { path:'/b', component:BIndex },
     { path:'/instagram', component:Instagram },
-    { path:'/wechat', component:WechatGroup }
+    { path:'/wechat', component:WechatGroup },
+    { path:'/shorturl', component:ShortUrl }
 ]
