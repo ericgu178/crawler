@@ -61,7 +61,7 @@ class Instagram extends React.Component {
                     {!this.state.loading ? 
                     <>
                         <div style={{color:'#000'}}>短链接: {this.state.data.short_url} <Button variant="contained" color="primary" onClick={this.fuzhi.bind(this,this.state.data.short_url)}>复制</Button></div>
-                        <div style={{color:'#000'}}>原链接: {this.state.data.original_url}</div>
+                        <div style={{color:'#000',width:'52vw',overflowX:'scroll',overflowY:'hidden'}}>原链接: {this.state.data.original_url}</div>
                     </> : <></>}
                     
                 </div>
