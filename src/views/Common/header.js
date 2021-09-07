@@ -31,9 +31,7 @@ export default function Header(props) {
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
         <Button size="small">
-            <a href="https://ericgu178.com" style={{color:"#fff"}} target="_blank" rel="noreferrer">
-                ERICGU178
-            </a>
+            <span style={{color:"#fff"}}>ERICGU178</span>    
         </Button>
         <Typography
           component="h2"
@@ -46,7 +44,8 @@ export default function Header(props) {
           {title}
         </Typography>
         <Button variant="outlined" size="small">
-            <a href="https://t.me/wechatGroupQrcode" style={{color:"#fff"}} target="_blank" rel="noreferrer">加入电报群组</a>
+            <span style={{color:"#fff"}}>占位占位占位</span> 
+            {/* <a href="https://t.me/wechatGroupQrcode" style={{color:"#fff"}} target="_blank" rel="noreferrer">占位占位占位</a> */}
         </Button>
       </Toolbar>
       <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
