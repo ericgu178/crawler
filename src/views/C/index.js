@@ -34,7 +34,7 @@ class WechatGroup extends React.Component {
             <Container maxWidth="lg">
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
-                        <h1 style={{fontSize:'40px',width:'100%',textAlign:'center',padding:'5px',margin:'10px auto'}}>微信群采集</h1>
+                        <h1 style={{fontSize:'40px',width:'100%',textAlign:'center',padding:'5px',margin:'10px auto'}}>微信群列表展示</h1>
                     </Grid>
                     <Grid item xs={12}>
                         <Alert severity="info">
