@@ -1,13 +1,14 @@
 import React from 'react'
 import Router from '../router';
 import { withRouter } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+import Header from './Common/header';
+import Footer from './Common/footer';
 import './main.css';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import ImageAspectRatioIcon from '@material-ui/icons/ImageAspectRatio';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import AttachFileIcon from '@material-ui/icons/AttachFile';
-import GroupIcon from '@material-ui/icons/Group';
+
 class Main extends React.Component {
     state = {
         value:'b'
@@ -17,24 +18,30 @@ class Main extends React.Component {
         this.setState({value:url})
     }
     render() {
+        const sections = [
+            { title: '短链接生成', url: '/shorturl' },
+            { title: 'instagram图片下载', url: '/instagram' },
+            { title: '哔哩哔哩', url: '/b' },
+            { title: '微信群采集', url: '/wechat' },
+          ];
+          const useStyles = makeStyles((theme) => ({
+            mainGrid: {
+              marginTop: theme.spacing(3),
+            },
+          }));
         return (
-            <div style={{height:'100%'}}>
-                <Router></Router>
-                <BottomNavigation
-                    style={{position:'fixed',left:0,top:0,height:'100%',background:'rgba(0,0,0,.3)',flexDirection:'column'}}
-                    value={this.state.value}
-                    onChange={(event, newValue) => {
-                        window.location.href = '/' + newValue
-                        this.setState({value:newValue})
-                    }}
-                    showLabels
-                >
-                    <BottomNavigationAction style={{background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',fontSize:'18px',fontWeight:'700',color:'#000'}} label="短链接生成" value="shorturl" icon={<AttachFileIcon />} />
-                    <BottomNavigationAction style={{background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',fontSize:'18px',fontWeight:'700',color:'#000'}} label="instagram" value="instagram" icon={<InstagramIcon />} />
-                    <BottomNavigationAction style={{background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',fontSize:'18px',fontWeight:'700',color:'#000'}} label="哔哩哔哩" value="b" icon={<ImageAspectRatioIcon />} />
-                    <BottomNavigationAction style={{background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',fontSize:'18px',fontWeight:'700',color:'#000'}} label="微信群" value="wechat" icon={<GroupIcon />} />
-                </BottomNavigation>
-            </div>
+            <React.Fragment>
+                <CssBaseline />
+                <Container maxWidth="lg">
+                  <Header title="自用工具站" sections={sections} />
+                  <main style={{margin:"20px auto 40px"}}>
+                    <Grid container className={useStyles.mainGrid}>
+                        <Router></Router>
+                    </Grid>
+                  </main>
+                </Container>
+                <Footer title="Living in the moment" description="此网站属于数据采集网站" />
+            </React.Fragment>
         )
     }
 }

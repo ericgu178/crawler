@@ -11,7 +11,7 @@ class index extends React.Component {
     render() {
         return (
             // 我们将这个key绑定在 路由顶层元素上就能精确定位路由了 解决的是路由变了 但是页面没有刷新
-            <div key={this.props.location.key} style={{height:'100%'}}>
+            <div key={this.props.location.key} style={{height:'100%',width:'100%'}}>
                 <Switch>
                     <RenderRoutes path="/b" component={BIndex}/>
                     <RenderRoutes path="/instagram" component={Instagram}/>

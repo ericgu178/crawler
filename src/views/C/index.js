@@ -3,6 +3,8 @@ import { fetchWechatGroup } from '../../store/actions/c';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import MuiAlert from '@material-ui/lab/Alert';
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
 
 const Alert = (props) => {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -22,26 +24,34 @@ class WechatGroup extends React.Component {
     }
 
     render() {
-        const { data,loading } = this.state;
+        const { data } = this.state;
         const html = data.map((item,index)=>(
-                <div key={index} style={{width:'calc(100% / 4 - 20px)',margin:'10px'}}>
-                    <img src={item.src} alt={item.alt} width={'100%'} title={item.alt} referrerPolicy="no-referrer"></img>
-                </div>
+                <Grid item xs={12} sm={3} key={index}>
+                    <img style={{borderRadius:'10px'}} src={item.src} alt={item.alt} width={'100%'} title={item.alt} referrerPolicy="no-referrer"></img>
+                </Grid>
         ))
         return (
-            <div className="bili">
-                <div className="bilititle">微信群采集</div>
-                <Alert severity="info" style={{marginTop:'20px'}}>
-                    <ul style={{marginLeft:'20px'}}>
-                        <li>1. 本站的微信群二维码是采集而来的；</li>
-                        <li>2. 每天可能会有 10 个以上新群采集进来；</li>
-                        <li>3. 因为群很快就可能会加满100人，所以大家可以隔几个小时来看一下；</li>
-                    </ul>
-                </Alert>
-                <div style={{display:'flex',alignItems:'center',flexWrap:'wrap'}}>
-                    {html}
-                </div>
-            </div>
+            <Container maxWidth="lg">
+                <Grid container spacing={3}>
+                    <Grid item xs={12}>
+                        <h1 style={{fontSize:'40px',width:'100%',textAlign:'center',padding:'5px',margin:'10px auto'}}>微信群采集</h1>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Alert severity="info">
+                            <ul style={{marginLeft:'20px'}}>
+                                <li>1. 本站的微信群二维码的来源网络发布；</li>
+                                <li>2. 本站微信群组质量多数高质量，不能保证所有群组；</li>
+                                <li>3. 因为群组很快就可能会加满200人，所以大家可以隔几个小时来看一下，避免群组失效或是群组开验证；</li>
+                                <li>4. 即便是满人的群，大家也可以尝试隔几个小时扫一下看看，有可能会群主踢人了然后不满200人的情况；</li>
+                                <li>5. 微信群组各行各业都有，没有的话过一段时间在来看；</li>
+                            </ul>
+                        </Alert>
+                    </Grid>
+                    <Grid container spacing={3}>
+                        {html}
+                    </Grid>
+                </Grid>
+            </Container>
         )
     }
 }

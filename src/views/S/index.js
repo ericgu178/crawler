@@ -53,15 +53,15 @@ class Instagram extends React.Component {
             <div style={styles.bg}>
                 <div>
                     <Alert severity="info">这是一款可现在生成短链(短网址)的工具，可根据用户提交的网址生成相对应的短连接地址，做到有效的隐藏真实地址，方便实用，感兴趣的朋友快来试试吧！</Alert>
-                    <h1 style={{margin:'30px 0',color:'#000'}}>短链(短网址)在线生成工具</h1>
-                    <Input style={{width:'35vw'}} id="url" placeholder="请输入链接" inputProps={{ 'aria-label': 'description' }} />
+                    <h1 style={{margin:'30px 0'}}>短链(短网址)在线生成工具</h1>
+                    <Input style={{width:'35vw',color:'#fff'}} id="url" placeholder="请输入链接" inputProps={{ 'aria-label': 'description' }} />
                     <div style={{margin:'30px 0'}}>
                         <Button variant="contained" color="primary" onClick={this.onClick.bind(this)}>确认</Button>
                     </div>
                     {!this.state.loading ? 
                     <>
-                        <div style={{color:'#000'}}>短链接: {this.state.data.short_url} <Button variant="contained" color="primary" onClick={this.fuzhi.bind(this,this.state.data.short_url)}>复制</Button></div>
-                        <div style={{color:'#000',width:'52vw',overflowX:'scroll',overflowY:'hidden'}}>原链接: {this.state.data.original_url}</div>
+                        <div style={{color:'#fff'}}>短链接: {this.state.data.short_url} <Button variant="contained" color="primary" onClick={this.fuzhi.bind(this,this.state.data.short_url)}>复制</Button></div>
+                        <div style={{color:'#fff',width:'52vw',overflowX:'auto',overflowY:'hidden'}}>原链接: {this.state.data.original_url}</div>
                     </> : <></>}
                     
                 </div>
@@ -72,7 +72,7 @@ class Instagram extends React.Component {
 
 const styles = {
     bg: {
-        background:'#fff',
+        background:'transparent',
         height:'100%',
         display:'flex',
         justifyContent:'center',

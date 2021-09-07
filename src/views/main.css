@@ -4,12 +4,22 @@
     margin:0;
 }
 html,body {
-    background:#1a1a1a;
-    color:#e0ed5e;
-    height: 100%;
+    color:#fff !important;
+    height: 100% !important;
+    margin: 0 !important;
+    font-size: 0.875rem !important;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1.43 !important;
+    letter-spacing: 0.01071em !important;
+    background-color: #121212 !important
 }
 
-a {
+a,h1,h2,h3,h4,h5,h6 {
     text-decoration: none;
     color:#e0ed5e
+}
+
+.MuiInput-underline:before {
+    border-bottom:1px solid rgba(234,222,222,.42) !important
 }
