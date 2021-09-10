@@ -17,7 +17,7 @@ class index extends React.Component {
                     <RenderRoutes path="/instagram" component={Instagram}/>
                     <RenderRoutes path="/wechat" component={WechatGroup}/>
                     <RenderRoutes path="/shorturl" component={ShortUrl}/>
-                    <Redirect from="/" to="/b" />
+                    <Redirect from="/" to="/wechat" />
                 </Switch>
             </div>
         )

@@ -20,7 +20,7 @@ class Main extends React.Component {
     render() {
         const sections = [
             { title: '短链接生成', url: '/shorturl' },
-            // { title: 'instagram图片下载', url: '/instagram' },
+            { title: 'instagram图片下载', url: '/instagram' },
             { title: '哔哩哔哩', url: '/b' },
             { title: '微信群采集', url: '/wechat' },
           ];

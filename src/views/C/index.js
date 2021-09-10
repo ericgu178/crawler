@@ -26,16 +26,13 @@ class WechatGroup extends React.Component {
     render() {
         const { data } = this.state;
         const html = data.map((item,index)=>(
-                <Grid item xs={12} sm={3} key={index}>
-                    <img style={{borderRadius:'10px'}} src={item.src} alt={item.alt} width={'100%'} title={item.alt} referrerPolicy="no-referrer"></img>
+                <Grid item xs={12} sm={3} key={index} style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+                    <img style={{borderRadius:'10px'}} src={item.src} alt={item.alt} width={'80%'} title={item.alt} referrerPolicy="no-referrer"></img>
                 </Grid>
         ))
         return (
             <Container maxWidth="lg">
                 <Grid container spacing={3}>
-                    <Grid item xs={12}>
-                        <h1 style={{fontSize:'40px',width:'100%',textAlign:'center',padding:'5px',margin:'10px auto'}}>微信群列表展示</h1>
-                    </Grid>
                     <Grid item xs={12}>
                         <Alert severity="info">
                             <ul style={{marginLeft:'20px'}}>
