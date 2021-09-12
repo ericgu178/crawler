@@ -34,6 +34,7 @@ class WechatGroup extends React.Component {
         return (
             <Container maxWidth="lg">
                 <Grid container spacing={3}>
+                    <Grid item xs={12}>
                     <AdSense.Google
                         client='ca-pub-8220679826017146'
                         slot='1681331575'
@@ -41,6 +42,7 @@ class WechatGroup extends React.Component {
                         format='auto'
                         responsive='true'
                     />
+                    </Grid>
                     <Grid item xs={12}>
                         <Alert severity="info">
                             <ul style={{marginLeft:'20px'}}>
