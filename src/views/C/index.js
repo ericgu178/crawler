@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import MuiAlert from '@material-ui/lab/Alert';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
+import AdSense from 'react-adsense';
 
 const Alert = (props) => {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -26,13 +27,20 @@ class WechatGroup extends React.Component {
     render() {
         const { data } = this.state;
         const html = data.map((item,index)=>(
-                <Grid item xs={12} sm={3} key={index} style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
-                    <img style={{borderRadius:'10px'}} src={item.src} alt={item.alt} width={'80%'} title={item.alt} referrerPolicy="no-referrer"></img>
-                </Grid>
+            <Grid item xs={12} sm={3} key={index} style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+                <img style={{borderRadius:'10px'}} src={item.src} alt={item.alt} width={'80%'} title={item.alt} referrerPolicy="no-referrer"></img>
+            </Grid>
         ))
         return (
             <Container maxWidth="lg">
                 <Grid container spacing={3}>
+                    <AdSense.Google
+                        client='ca-pub-8220679826017146'
+                        slot='1681331575'
+                        style={{ display: 'block' }}
+                        format='auto'
+                        responsive='true'
+                    />
                     <Grid item xs={12}>
                         <Alert severity="info">
                             <ul style={{marginLeft:'20px'}}>
