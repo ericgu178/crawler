@@ -20,7 +20,7 @@ const Logger = require('koa-logger');
 // 配置文件
 const config = {
     port: 5050,
-    title:'数据'
+    title:'信息展示'
 };
 
 // 实例化 koa
@@ -53,18 +53,18 @@ app.use(
         })
         .get('/instagram' , async (ctx, next) => {
             const { store } = getCreateStore(ctx,B)
-            await renderFullHtml(ctx,store,ctx.req.url,'instagram')
+            await renderFullHtml(ctx,store,ctx.req.url,'免费在线下载 Instagram 的图片')
             await next()
         })
         .get('/shorturl' , async (ctx, next) => {
             const { store } = getCreateStore(ctx,B)
-            await renderFullHtml(ctx,store,ctx.req.url,'短链接生成')
+            await renderFullHtml(ctx,store,ctx.req.url,'在线短链接生成工具,短网址随机跳转')
             await next()
         })
         .get('/wechat' , async (ctx, next) => {
             const {store} = await searchTemplate(ctx,C,'/wechat',ctx.params)
 
-            await renderFullHtml(ctx,store,ctx.req.url,'微信群')
+            await renderFullHtml(ctx,store,ctx.req.url,'微信群,微信红包群,微信群大全,微信群二维码发布与分享')
             await next()
         })
     .routes()

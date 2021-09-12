@@ -6,6 +6,9 @@ import MuiAlert from '@material-ui/lab/Alert';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import AdSense from 'react-adsense';
+import { PhotoProvider, PhotoConsumer } from 'react-photo-view';
+import 'react-photo-view/dist/index.css';
+
 
 const Alert = (props) => {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -26,36 +29,24 @@ class WechatGroup extends React.Component {
 
     render() {
         const { data } = this.state;
-        data.splice(0, 0, {
-            src:'123',
-            alt:'123'
-        });
-        data.splice(8, 0, {
-            src:'123',
-            alt:'123'
-        });
-        data.splice(16, 0, {
-            src:'123',
-            alt:'123'
-        });
-        data.splice(32, 0, {
-            src:'123',
-            alt:'123'
-        });
+        console.log(data)
         const html = data.map((item,index)=>(
             <Grid item xs={12} sm={3} key={index} style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
-                {item.src === '123' ? <Grid item xs={12}><AdSense.Google
-                    client='ca-pub-8220679826017146'
-                    slot='1681331575'
-                    style={{ display: 'block' }}
-                    format='auto'
-                    responsive='true'
-                /></Grid> : <img style={{borderRadius:'10px'}} 
-                        src={item.src} alt={item.alt} 
-                        width={'80%'} 
-                        title={item.alt} 
-                        referrerPolicy="no-referrer">
-                    </img>}
+                {item.src === '123' ? <Grid item xs={12}>
+                    <AdSense.Google
+                        client='ca-pub-8220679826017146'
+                        slot='1681331575'
+                        style={{ display: 'block' }}
+                        format='auto'
+                        responsive='true'/>
+                    </Grid> : <PhotoConsumer key={index} src={item.src} intro={item.alt}>
+                        <img style={{borderRadius:'5px',cursor:'pointer'}} 
+                            src={item.src} alt={item.alt} 
+                            width={'80%'} 
+                            title={item.alt} 
+                            referrerPolicy="no-referrer">
+                        </img>
+                    </PhotoConsumer>}
             </Grid>
         ))
         return (
@@ -72,8 +63,10 @@ class WechatGroup extends React.Component {
                             </ul>
                         </Alert>
                     </Grid>
-                    <Grid container spacing={3}>
-                        {html}
+                    <Grid container spacing={2}>
+                        <PhotoProvider>
+                            {html}
+                        </PhotoProvider>
                     </Grid>
                 </Grid>
             </Container>
