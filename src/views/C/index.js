@@ -44,13 +44,13 @@ class WechatGroup extends React.Component {
         });
         const html = data.map((item,index)=>(
             <Grid item xs={12} sm={3} key={index} style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
-                {item.src === '123' ? <AdSense.Google
+                {item.src === '123' ? <Grid item xs={12}><AdSense.Google
                     client='ca-pub-8220679826017146'
                     slot='1681331575'
                     style={{ display: 'block' }}
                     format='auto'
                     responsive='true'
-                /> : <img style={{borderRadius:'10px'}} 
+                /></Grid> : <img style={{borderRadius:'10px'}} 
                         src={item.src} alt={item.alt} 
                         width={'80%'} 
                         title={item.alt} 
