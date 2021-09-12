@@ -26,23 +26,41 @@ class WechatGroup extends React.Component {
 
     render() {
         const { data } = this.state;
+        data.splice(0, 0, {
+            src:'123',
+            alt:'123'
+        });
+        data.splice(8, 0, {
+            src:'123',
+            alt:'123'
+        });
+        data.splice(16, 0, {
+            src:'123',
+            alt:'123'
+        });
+        data.splice(32, 0, {
+            src:'123',
+            alt:'123'
+        });
         const html = data.map((item,index)=>(
             <Grid item xs={12} sm={3} key={index} style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
-                <img style={{borderRadius:'10px'}} src={item.src} alt={item.alt} width={'80%'} title={item.alt} referrerPolicy="no-referrer"></img>
+                {item.src === '123' ? <AdSense.Google
+                    client='ca-pub-8220679826017146'
+                    slot='1681331575'
+                    style={{ display: 'block' }}
+                    format='auto'
+                    responsive='true'
+                /> : <img style={{borderRadius:'10px'}} 
+                        src={item.src} alt={item.alt} 
+                        width={'80%'} 
+                        title={item.alt} 
+                        referrerPolicy="no-referrer">
+                    </img>}
             </Grid>
         ))
         return (
             <Container maxWidth="lg">
                 <Grid container spacing={3}>
-                    <Grid item xs={12}>
-                    <AdSense.Google
-                        client='ca-pub-8220679826017146'
-                        slot='1681331575'
-                        style={{ display: 'block' }}
-                        format='auto'
-                        responsive='true'
-                    />
-                    </Grid>
                     <Grid item xs={12}>
                         <Alert severity="info">
                             <ul style={{marginLeft:'20px'}}>
