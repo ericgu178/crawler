@@ -65,13 +65,15 @@ class Instagram extends React.Component {
         return (
             <div style={styles.bg}>
                 <div style={styles.div2}>
-                    <AdSense.Google
-                        client='ca-pub-8220679826017146'
-                        slot='1681331575'
-                        style={{ display: 'block' }}
-                        format='auto'
-                        responsive='true'
-                    />
+                    <div style={{width:'100%',margin:'30px 0'}}>
+                        <AdSense.Google
+                            client='ca-pub-8220679826017146'
+                            slot='8640974674'
+                            style={{ width: '100%', height: 60, float: 'left' }}
+                            format=''
+                            responsive='true'
+                        />
+                    </div>
                     <Alert severity="info">输入instagram帖子链接即可点击确认后拖抓图片下载</Alert>
                     <h1 style={{margin:'30px 0'}}>instagram 图片下载</h1>
                     <Input style={{width:'35vw',color:'#fff'}} id="url" placeholder="请输入链接" inputProps={{ 'aria-label': 'description' }} />
