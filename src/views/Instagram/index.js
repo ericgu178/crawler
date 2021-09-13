@@ -4,6 +4,7 @@ import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 import MuiAlert from '@material-ui/lab/Alert';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import AdSense from 'react-adsense';
 
 const Alert = (props) => {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -64,6 +65,13 @@ class Instagram extends React.Component {
         return (
             <div style={styles.bg}>
                 <div style={styles.div2}>
+                    <AdSense.Google
+                        client='ca-pub-8220679826017146'
+                        slot='1681331575'
+                        style={{ display: 'block' }}
+                        format='auto'
+                        responsive='true'
+                    />
                     <Alert severity="info">输入instagram帖子链接即可点击确认后拖抓图片下载</Alert>
                     <h1 style={{margin:'30px 0'}}>instagram 图片下载</h1>
                     <Input style={{width:'35vw',color:'#fff'}} id="url" placeholder="请输入链接" inputProps={{ 'aria-label': 'description' }} />
@@ -71,7 +79,6 @@ class Instagram extends React.Component {
                         <Button variant="contained" color="primary" onClick={this.onClick.bind(this)}>确认</Button>
                         <Button style={{marginLeft:'20px'}} variant="contained" color="primary" onClick={this.download.bind(this)} disabled={this.state.img.length === 0 || this.state.loading}>下载</Button>
                     </div>
-                    
                 </div>
                 <div style={{height:'calc(100% - 40px)',overflowY: 'auto',width:'calc(80% - 40px)',margin:'20px',display:'flex',justifyContent:'center',alignItems:'center',flexWrap:'wrap',}}>
                     { this.state.loading === true ? <CircularProgress /> : 
