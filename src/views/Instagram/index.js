@@ -35,26 +35,19 @@ class Instagram extends React.Component {
 
     // 下载图片
     download() {
-        var img = new Image()
-        img.onload = function() {
-            var canvas = document.createElement('canvas')
-            canvas.width = img.width
-            canvas.height = img.height
-            var ctx = canvas.getContext('2d')
-            // 将img中的内容画到画布上
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-            // 将画布内容转换为base64
-            var base64 = canvas.toDataURL()
-            // 创建a链接
-            var a = document.createElement('a')
-            a.href = base64
-            a.download = new Date().getTime();
-            // 触发a链接点击事件，浏览器开始下载文件
-            a.click();
-        }
-        img.src = this.state.img
-        // 必须设置，否则canvas中的内容无法转换为base64
-        img.setAttribute('crossOrigin', 'anonymous')
+        this.state.img.forEach(v => {
+            var x=new XMLHttpRequest();
+            x.open("GET", v, true);
+            x.responseType = 'blob';
+            x.onload=function(e){
+                var url = window.URL.createObjectURL(x.response)
+                var a = document.createElement('a');
+                a.href = url
+                a.download = ''
+                a.click()
+            }
+            x.send();
+        })
     }
 
     componentDidMount() {
@@ -82,7 +75,7 @@ class Instagram extends React.Component {
                         <Button style={{marginLeft:'20px'}} variant="contained" color="primary" onClick={this.download.bind(this)} disabled={this.state.img.length === 0 || this.state.loading}>下载</Button>
                     </div>
                 </div>
-                <div style={{height:'calc(100% - 40px)',overflowY: 'auto',width:'calc(80% - 40px)',margin:'20px',display:'flex',justifyContent:'center',alignItems:'center',flexWrap:'wrap',}}>
+                <div style={{maxHeight:'28.5vw',overflowY: 'auto',width:'calc(80% - 40px)',margin:'20px',display:'flex',justifyContent:'center',alignItems:'center',flexWrap:'wrap',}}>
                     { this.state.loading === true ? <CircularProgress /> : 
                     this.state.img.length === 0 ? <></>  : 
                         this.state.img.map(v=>{
