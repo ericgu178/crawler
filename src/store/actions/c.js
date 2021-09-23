@@ -8,15 +8,15 @@ export const fetchWechatGroup = (params) => {
             src:'123',
             alt:'123'
         });
-        res.data.splice(16, 0, {
+        res.data.splice(9, 0, {
             src:'123',
             alt:'123'
         });
-        res.data.splice(21, 0, {
+        res.data.splice(18, 0, {
             src:'123',
             alt:'123'
         });
-        res.data.splice(53, 0, {
+        res.data.splice(26, 0, {
             src:'123',
             alt:'123'
         });
